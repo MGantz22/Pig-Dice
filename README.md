@@ -1,0 +1,1 @@
+parseInt(Math.random()*6)
