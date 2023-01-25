@@ -1,3 +1,4 @@
+// Business Logic -------
 function Dice(number, totalScore, roundScore) {
     this.number = 0;
     this.totalScore = 0;
@@ -26,8 +27,11 @@ Dice.prototype.TotalRound = function() {
 }
 
 Dice.prototype.DetermineWinner = function() {
-    if(this.TotalScore >= 100 ){
-        console.log(this.totalScore + ", you won!");
+    if(this.totalScore >= 10 ){
+        console.log(this.totalScore);
     }
 
 }
+
+// UI Logic -------
+

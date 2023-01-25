@@ -1,34 +1,25 @@
+Describe: Dice
 
-function Dice() {
-  this.number = 0;
-  this.totalScore = 0;
-  this.roundScore = 0;
-}
+Test: It should create a dice object
+Code: let newDice = new Dice()
+Expected Output: newDice(0)
 
-let dice1 = new Dice();
-let dice2 = new Dice();
+Test: It should roll a random number between 1-6
+Code: Math.random()*6
+Expected Output: a random number between 1-6
 
-Dice.prototype.Roll = function() {
-  this.number = Math.ceil(Math.random()*6);
-}
+Test: It should add a random number to the roundScore
+Code: this.roundScore += this.number
+Expected Output: this.roundScore += this.number
 
-Dice.prototype.PlayRound() {
-    if (this.number !== 1) {
-        this.roundScore += this.number;
-    } else {
-        this.roundScore = 0;
-    }
-    return this.roundScore;
-}
+Test: It should 0 out roundScore if this.number === 1
+Code: if(this.number ===1), this.roundScore = 0
+Expected Output: this.number =1, this.roundScore =0
 
-Dice.prototype.TotalRound() {
-    this.roundScore += this.totalScore;
+Test: It should add roundScore to TotalRound
+Code: Dice.prototype.TotalRound();
+Expected Output: this.totalScore += this.roundScore
 
-}
-
-Dice.prototype.DetermineWinner() {
-    if(this.TotalScore >= 100 ){
-        console.log(this.totalScore + ", you won!");
-    }
-
-}
+Test: It should determine a winner after 10+ points
+Code: if(this.totalScore >10)
+Expected Output: console.log(totalScore);
