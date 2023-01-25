@@ -1,7 +1,10 @@
 h1 {
     text-align: center;
     font-size: 700%;
+    color: #3e8e41;
 }
+
+
 
 .button {
     display: inline-block;
@@ -27,3 +30,14 @@ h1 {
     box-shadow: 0 5px #666;
     transform: translateY(4px);
 }
+
+/* #player-1 {
+    display: flex;
+    flex-direction: column;
+    max-width: 150px;
+    margin-top: ;
+}
+#player-2 {
+    display: flex;
+    flex-direction: column;
+} */
