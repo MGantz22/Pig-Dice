@@ -25,14 +25,14 @@ Dice.prototype.TotalRound = function() {
 }
 
 Dice.prototype.DetermineWinner = function() {
-    if(this.totalScore >= 10 ){
+    if(this.totalScore >= 100 ){
         console.log(this.totalScore);
+        return this.totalScore;
     }
-
+    return false;
 }
 
 // UI Logic -------
-
 let dice1 = new Dice(0, 0, 0, 1);
 let dice2 = new Dice(0, 0, 0, 2);
 
@@ -55,36 +55,72 @@ function displayPlayersScore(dice) {
   roundScore2.innerText = dice.roundScore;
   totalScore2.innerText = dice.totalScore;
   }
-
 }
 
-
 window.addEventListener("load", function() {
-  let playersSpot = document.getElementById("players");
-  playersSpot.addEventListener("click", PlayerInput);
-
+  let playersDiv = document.getElementById("players");
+  playersDiv.addEventListener("click", ButtonClick);
 });
 
-function PlayerInput(event) {
+function ButtonClick(event) {
+  
+  if(event.target.id === "rematch") {
+    location.reload();
+  }
+
   if(event.target.id === "roll-dice-1") {
     dice1.Roll();
     dice1.PlayRound();
     displayPlayersScore(dice1);
   } else
+
   if(event.target.id === "hold-dice-1") {
     dice1.TotalRound();
     displayPlayersScore(dice1);
   } else
+
   if(event.target.id === "roll-dice-2") {
     dice2.Roll();
     dice2.PlayRound();
     displayPlayersScore(dice2);
   } else
+
   if(event.target.id === "hold-dice-2") {
     dice2.TotalRound();
     displayPlayersScore(dice2);
   } else {
     return false;
   }
-  
+
+  if(dice1.DetermineWinner() !== false) {
+    displayWinner(dice1);
+  }
+
+  if(dice2.DetermineWinner() !== false){
+    displayWinner(dice2);
+  }
 }
+
+function displayWinner(dice) {
+  document.querySelector("h1").innerText = "Dice Player "+ dice.id + " is the Winner!";
+  document.getElementById("rematch").classList.remove("hidden");
+}
+// attempt at custom names insert and winner 
+//var player1 = "Player one";
+//var player2 = "Player two";
+
+//function editNames {
+    //player1 = prompt("Change Player1 name");
+    //player2 = prompt("Change player2 name");
+
+   //document.querySelector("h.player1").innerHTML = Player one 
+   //}
+
+   /////HTML BUTTON 
+
+    //<div class="container bottom">
+        //<button type="button" class="butn"
+           // onClick="editNames()">
+            //Edit Names
+        //</button>
+    //</div>

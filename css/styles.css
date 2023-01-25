@@ -2,11 +2,14 @@ h1 {
     text-align: center;
     font-size: 700%;
     color: #3e8e41;
-}
-
-
-
-.button {
+  }
+  
+  button.hidden {
+    display: none;
+  }
+  
+  .button {
+    margin: 20px;
     display: inline-block;
     padding: 15px 25px;
     font-size: 24px;
@@ -19,18 +22,46 @@ h1 {
     border: none;
     border-radius: 15px;
     box-shadow: 0 9px #999;
-}
-
-.button:hover {
+  }
+  
+  .button:hover {
     background-color: #3e8e41
-}
-
-.button:active {
+  }
+  
+  .button:active {
     background-color: #3e8e41;
     box-shadow: 0 5px #666;
     transform: translateY(4px);
-}
-
+  }
+  
+  #player-1 {
+    text-align: center;
+    font-size: 25px;
+    display: flex;
+  
+    flex-direction: column;
+    max-width: 200px;
+  
+  }
+  #player-2 {
+    text-align: center;
+    font-size: 25px;
+    display: flex;
+    flex-direction: column;
+    max-width: 200px;
+  }
+  
+  #players {
+    max-height: 35vh;
+    padding-left: 30vh;
+    padding-right: 30vh;
+    margin-top: 100px;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+  }
+  
+  
 /* #player-1 {
     display: flex;
     flex-direction: column;
