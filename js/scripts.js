@@ -22,6 +22,7 @@ Dice.prototype.PlayRound = function() {
 
 Dice.prototype.TotalRound = function() {
   this.totalScore += this.roundScore;
+  this.roundScore = 0;
 }
 
 Dice.prototype.DetermineWinner = function() {
